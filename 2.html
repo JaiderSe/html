@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Día de la Semana</title>
+    <script>
+        function verificarDia() {
+            // Obtener el valor ingresado por el usuario
+            var dia = document.getElementById('dia').value.toLowerCase();
+
+            // Definir días laborales y festivos
+            var diasLaborales = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes'];
+            var diasFestivos = ['sábado', 'domingo'];
+
+            // Verificar el día ingresado
+            if (diasLaborales.includes(dia)) {
+                alert('Es un día laboral.');
+            } else if (diasFestivos.includes(dia)) {
+                alert('Es un día festivo.');
+            } else {
+                alert('Por favor, ingrese un día de la semana válido.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificar Día de la Semana</h1>
+    <form onsubmit="verificarDia(); return false;">
+        <label for="dia">Ingresa un día de la semana:</label>
+        <input type="text" id="dia" name="dia">
+        <button type="submit">Verificar</button>
+    </form>
+</body>
+</html>

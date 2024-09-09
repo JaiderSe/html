@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Color de Fondo</title>
+    <style>
+        /* Estilos básicos para la página */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+    <script>
+        function cambiarColorFondo() {
+            // Definir una lista de colores
+            var colores = ['#FF6347', '#4682B4', '#32CD32', '#FFD700', '#6A5ACD', '#FF4500', '#2E8B57'];
+            
+            // Elegir un color aleatorio de la lista
+            var colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+            
+            // Cambiar el color de fondo de la página
+            document.body.style.backgroundColor = colorAleatorio;
+        }
+    </script>
+</head>
+<body>
+    <h1>¡Cambia el color de fondo!</h1>
+    <button onclick="cambiarColorFondo()">Cambiar Color</button>
+</body>
+</html>

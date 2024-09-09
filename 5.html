@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Nombre y Apellido</title>
+    <style>
+        /* Estilos básicos para la página */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #resultados {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function mostrarResultados(event) {
+            // Prevenir el envío del formulario
+            event.preventDefault();
+            
+            // Obtener los valores de los campos de texto
+            var nombre = document.getElementById('nombre').value;
+            var apellido = document.getElementById('apellido').value;
+            
+            // Mostrar los resultados en la página
+            var resultados = document.getElementById('resultados');
+            resultados.innerHTML = 'Nombre: ' + nombre + '<br>Apellido: ' + apellido;
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulario de Nombre y Apellido</h1>
+    <form onsubmit="mostrarResultados(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="resultados"></div>
+</body>
+</html>

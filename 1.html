@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Par o Impar</title>
+    <script>
+        function verificarNumero() {
+            // Obtener el valor ingresado por el usuario
+            var numero = document.getElementById('numero').value;
+            
+            // Verificar si el valor ingresado es un número
+            if (isNaN(numero) || numero === '') {
+                alert('Por favor, ingrese un número válido.');
+                return;
+            }
+            
+            // Convertir el valor ingresado a un número entero
+            numero = parseInt(numero, 10);
+            
+            // Determinar si el número es par o impar
+            if (numero % 2 === 0) {
+                alert('El número ' + numero + ' es par.');
+            } else {
+                alert('El número ' + numero + ' es impar.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificar Par o Impar</h1>
+    <form onsubmit="verificarNumero(); return false;">
+        <label for="numero">Ingresa un número:</label>
+        <input type="text" id="numero" name="numero">
+        <button type="submit">Verificar</button>
+    </form>
+</body>
+</html>

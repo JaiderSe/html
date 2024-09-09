@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Número Primo</title>
+    <script>
+        function esPrimo(num) {
+            // Verificar si el número es menor o igual a 1
+            if (num <= 1) return false;
+            // Verificar si el número es 2 (el único número primo par)
+            if (num === 2) return true;
+            // Verificar si el número es par
+            if (num % 2 === 0) return false;
+            // Verificar si el número es divisible por algún número impar desde 3 hasta la raíz cuadrada del número
+            for (let i = 3; i <= Math.sqrt(num); i += 2) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function verificarNumero() {
+            // Obtener el valor ingresado por el usuario
+            var numero = parseInt(document.getElementById('numero').value, 10);
+
+            // Verificar si el valor ingresado es un número válido
+            if (isNaN(numero)) {
+                alert('Por favor, ingrese un número válido.');
+                return;
+            }
+
+            // Verificar si el número es primo
+            if (esPrimo(numero)) {
+                alert('El número ' + numero + ' es primo.');
+            } else {
+                alert('El número ' + numero + ' no es primo.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificar Número Primo</h1>
+    <form onsubmit="verificarNumero(); return false;">
+        <label for="numero">Ingresa un número:</label>
+        <input type="text" id="numero" name="numero">
+        <button type="submit">Verificar</button>
+    </form>
+</body>
+</html>
